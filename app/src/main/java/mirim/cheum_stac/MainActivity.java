@@ -8,6 +8,9 @@ import android.content.pm.Signature;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
+import android.view.ViewGroup;
+
+import net.daum.mf.map.api.MapView;
 
 import java.security.MessageDigest;
 
@@ -17,9 +20,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        gethash();
+        gethash(); //키해시 값 구하는 메서드
+
     }
 
+    //카카오맵 api를 사용하기 위한 키해시 값 구하는 메서드
     private void gethash() {
         try {
             PackageInfo info = getPackageManager().getPackageInfo(getPackageName(), PackageManager.GET_SIGNATURES);
