@@ -9,15 +9,21 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
+        android:layout_weight="1"
+        android:layout_height="0dp">
         <FrameLayout
-            android:id="@+id/frameLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-        </FrameLayout>
+            android:layout_height="match_parent"
+            android:id="@+id/frameLayout"/>
     </LinearLayout>
-
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_navi_menu"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        app:itemIconTint="@drawable/menu_selector_color"
+        app:itemTextColor="@drawable/menu_selector_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/btn_navi_menu"/>
 </LinearLayout>
