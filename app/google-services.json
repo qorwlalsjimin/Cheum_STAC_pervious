@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "115382196779",
+    "project_id": "cheum2022-9a9c3",
+    "storage_bucket": "cheum2022-9a9c3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:115382196779:android:853ef7da09d4253529a86e",
+        "android_client_info": {
+          "package_name": "mirim.cheum_stac"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "115382196779-topdq5cghmp3djus678hagbm14ofe56r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mirim.cheum_stac",
+            "certificate_hash": "1540fb5c5bffc8955ba3ec98513791623230d0b5"
+          }
+        },
+        {
+          "client_id": "115382196779-1i5p8tgma51p0tndtggvj73l95tk70jv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTA7doXNlJqJaLbVoV3GfXn0AJ9s5lNoM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "115382196779-1i5p8tgma51p0tndtggvj73l95tk70jv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
