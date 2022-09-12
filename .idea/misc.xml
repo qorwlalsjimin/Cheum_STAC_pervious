@@ -4,7 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Cheum_STAC/app/src/main/res/layout/activity_main.xml" value="0.34739583333333335" />
-        <entry key="..\:/Users/user/StudioProjects/Cheum_STAC/app/src/main/res/layout/activity_main.xml" value="0.33525179856115106" />
+        <entry key="..\:/Users/User/StudioProjects/Cheum_STAC/app/src/main/res/drawable/ic_launcher_background.xml" value="0.137" />
+        <entry key="..\:/Users/User/StudioProjects/Cheum_STAC/app/src/main/res/drawable/login_btn_active.xml" value="0.104" />
+        <entry key="..\:/Users/User/StudioProjects/Cheum_STAC/app/src/main/res/font/noto_sans.xml" value="0.1925925925925926" />
+        <entry key="..\:/Users/User/StudioProjects/Cheum_STAC/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/User/StudioProjects/Cheum_STAC/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/User/StudioProjects/Cheum_STAC/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
+        <entry key="..\:/Users/User/StudioProjects/Cheum_STAC/app/src/main/res/layout/login_btn_active.xml" value="0.1" />
       </map>
     </option>
   </component>
