@@ -15,6 +15,7 @@
         <item name="colorSurface">@android:color/white</item>
         <item name="backgroundColor">@android:color/white</item>
         <item name="android:windowBackground">@color/white</item>
+        <item name="buttonTint">@color/black</item>
         <item name="titleTextColor">@android:color/black</item>
         <item name="android:textColor">@color/black</item>
     </style>
