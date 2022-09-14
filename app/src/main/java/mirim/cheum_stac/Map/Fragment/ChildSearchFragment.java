@@ -5,12 +5,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
 import mirim.cheum_stac.Map.ListView.ListViewAdapter;
+import mirim.cheum_stac.Map.ListView.ListViewItem;
 import mirim.cheum_stac.Map.StoreDatas;
 import mirim.cheum_stac.R;
 
@@ -34,7 +37,7 @@ public class ChildSearchFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_child_search, container, false);
 
-        //가게 검색 필터링 기능(listview)
+        //가게 검색 필터링 기능(listview) 구현 시작
         ListViewAdapter adapter;
         adapter = new ListViewAdapter() ;
 
@@ -44,19 +47,30 @@ public class ChildSearchFragment extends Fragment {
         //리스트뷰에 데이터 추가
         StoreDatas storeDatas = new StoreDatas();
         for(int i = 0; i<storeDatas.dataCnt; i++)
-            adapter.addItem(storeDatas.storeText[i][1], storeDatas.storeText[i][2]);
+            adapter.addItem(storeDatas.storeText[i][1], storeDatas.storeText[i][2], i);
 
+        //ParentFragment에서 검색어값 받아오기
         LayoutInflater layoutInflater = getLayoutInflater();
         View layout = layoutInflater.inflate(R.layout.fragment_parent, v.findViewById(R.id.editTextFilter));
         editSearch = layout.findViewById(R.id.editTextFilter);
         editSearch.setText(strSearch);
-        Log.d("검색 원츄", "리스너 밖");
+
+        //ListView 필터링
         if(isSearch) ((ListViewAdapter) listData.getAdapter()).getFilter().filter(strSearch);
+
+        listData.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ListViewItem obj = (ListViewItem) parent.getAdapter().getItem(position);
+                Log.d("아이디: ", Integer.toString(obj.getId()));
+
+            }
+        });
 
         return v;
     }
 
-    //리스트뷰 필터링을 시작할 것인지 boolean값 ParentFragment에서 받아오기
+    //리스트뷰 필터링을 시작할 것인지의 boolean값 ParentFragment에서 받아오기
     public void isSearch(boolean b){
         isSearch = b;
     }

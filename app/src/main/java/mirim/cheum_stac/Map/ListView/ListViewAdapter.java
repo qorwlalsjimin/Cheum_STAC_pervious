@@ -59,11 +59,12 @@ public class ListViewAdapter extends BaseAdapter implements Filterable {
     }
 
     // 데이터 추가
-    public void addItem(String name, String location) {
+    public void addItem(String name, String location, int id) {
         ListViewItem item = new ListViewItem();
 
         item.setTitle(name);
         item.setDesc(location);
+        item.setId(id);
 
         listViewItemList.add(item);
     }
