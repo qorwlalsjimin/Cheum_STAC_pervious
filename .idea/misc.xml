@@ -4,8 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Cheum_STAC/app/src/main/res/layout/activity_main.xml" value="0.34739583333333335" />
-        <entry key="..\:/Cheum_STAC/app/src/main/res/layout/fragment_child_favor.xml" value="0.1" />
+        <entry key="..\:/Cheum_STAC/app/src/main/res/layout/fragment_child_favor.xml" value="0.25" />
+        <entry key="..\:/Cheum_STAC/app/src/main/res/layout/fragment_fill.xml" value="0.25" />
         <entry key="..\:/Cheum_STAC/app/src/main/res/layout/fragment_map.xml" value="0.25" />
+        <entry key="..\:/Cheum_STAC/app/src/main/res/layout/listview_favor_item.xml" value="0.12132725430597771" />
+        <entry key="..\:/Cheum_STAC/app/src/main/res/layout/listview_item.xml" value="0.1" />
       </map>
     </option>
   </component>

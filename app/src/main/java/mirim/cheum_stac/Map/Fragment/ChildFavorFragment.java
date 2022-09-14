@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import java.util.ArrayList;
 import java.util.List;
 
+import mirim.cheum_stac.Map.StoreDatas;
 import mirim.cheum_stac.R;
 
 public class ChildFavorFragment extends Fragment {
@@ -23,22 +24,19 @@ public class ChildFavorFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_child_favor, container, false);
 
-        ListView list;
-        list = (ListView) v.findViewById(R.id.list_favorite);
+        ListView listData;
+        listData = (ListView) v.findViewById(R.id.list_favorite);
         List<String> data = new ArrayList<>();
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, data);
-        list.setAdapter(adapter);
+        listData.setAdapter(adapter);
 
-        data.add("즐");
-        data.add("겨");
-        data.add("찾");
-        data.add("기");
+        StoreDatas storeDatas = new StoreDatas();
+        for(int i = 0; i<storeDatas.dataCnt; i++)
+            data.add(storeDatas.storeText[i][1]);
         adapter.notifyDataSetChanged();
 
         return v;

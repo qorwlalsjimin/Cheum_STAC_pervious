@@ -11,6 +11,7 @@ import android.widget.ListView;
 import androidx.fragment.app.Fragment;
 
 import mirim.cheum_stac.Map.ListView.ListViewAdapter;
+import mirim.cheum_stac.Map.StoreDatas;
 import mirim.cheum_stac.R;
 
 public class ChildSearchFragment extends Fragment {
@@ -41,11 +42,9 @@ public class ChildSearchFragment extends Fragment {
         listData.setAdapter(adapter);
 
         //리스트뷰에 데이터 추가
-        adapter.addItem("알맹상점 리스테이션 ", "서울 중구 한강대로 405 4층 (봉래동 2가)") ;
-        adapter.addItem("시리얼에코리필스테이션 롯데마트 제타플렉스점", "서울 송파구 올림픽로 240 (잠실동)") ;
-        adapter.addItem("아로마티카 제로스테이션", "서울 강남구 도산대로1길 62 1층 (신사동)") ;
-        adapter.addItem("덕분애제로웨이스트샵", "서울 서초구 서운로26길 11 2층 (서초동)") ;
-        adapter.addItem("순환지구", "서울 성북구 동소문로25길 8 1층 (동선동 4가)") ;
+        StoreDatas storeDatas = new StoreDatas();
+        for(int i = 0; i<storeDatas.dataCnt; i++)
+            adapter.addItem(storeDatas.storeText[i][1], storeDatas.storeText[i][2]);
 
         LayoutInflater layoutInflater = getLayoutInflater();
         View layout = layoutInflater.inflate(R.layout.fragment_parent, v.findViewById(R.id.editTextFilter));
