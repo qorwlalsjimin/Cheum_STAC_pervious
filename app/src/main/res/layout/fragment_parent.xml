@@ -1,22 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="center_horizontal"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <!--탭바에서 눌렀을때 나오는 Fragment-->
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical" android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <RelativeLayout
-            android:id="@+id/map_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </RelativeLayout>
-
+    <!--가게 검색창과 자식 Fragment-->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,7 +33,7 @@
                 android:layout_marginTop="15dp"
                 android:background="@android:color/transparent" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/img_search_icon"
                 android:src="@drawable/map_search_icon"
                 android:layout_width="21dp"
@@ -58,4 +46,9 @@
         </FrameLayout>
     </FrameLayout>
 
-</FrameLayout>
+    <FrameLayout
+        android:id="@+id/child_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

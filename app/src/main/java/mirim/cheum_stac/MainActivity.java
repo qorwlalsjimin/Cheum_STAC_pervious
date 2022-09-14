@@ -22,12 +22,20 @@ import net.daum.mf.map.api.MapView;
 
 import java.security.MessageDigest;
 
-public class MainActivity extends AppCompatActivity {
+import mirim.cheum_stac.Map.Fragment.ChildSearchFragment;
+import mirim.cheum_stac.Map.Fragment.FragmentListener;
+import mirim.cheum_stac.Map.Fragment.ParentFragment;
+
+public class MainActivity extends AppCompatActivity implements FragmentListener {
     private FragmentManager fragmentManager = getSupportFragmentManager();
     private HomeFragment homeFragment = new HomeFragment();
     private MapFragment mapFragment = new MapFragment();
     private FillFragment fillFragment = new FillFragment();
     private MypageFragment mypageFragment = new MypageFragment();
+
+    //지도 검색 Fragment들
+    private ParentFragment parentFragment;
+    private ChildSearchFragment childSearchFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +68,23 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+        //지도 검색 Fragment들 정의
+        parentFragment = new ParentFragment();
+        childSearchFragment = new ChildSearchFragment();
+
         gethash(); //키해시 값 구하는 메서드
 
+    }
+
+    //parent 프래그먼트로 이동 : 프래그먼트간 이동에 사용
+    public void onFragmentChange(){
+        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, ParentFragment.newInstance()).commit();
+    }
+
+    //FragmentListener 추상메서드 구현
+    @Override
+    public void onCommand(int index, String message) {
+        if(index == 0) childSearchFragment.displayMessage(message);
     }
 
     //카카오맵 api를 사용하기 위한 키해시 값 구하는 메서드
