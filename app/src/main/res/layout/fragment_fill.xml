@@ -187,21 +187,30 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:columnCount="2"
             android:rowCount="8">
-            <ImageView
+            <FrameLayout
                 android:layout_width="154dp"
                 android:layout_height="154dp"
-                android:src="@drawable/product_img"
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft="25dp"
-                android:layout_gravity="center"
+                android:layout_marginLeft="25dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/product_img"
                 android:id="@+id/news1"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/heart_white"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="9dp"
+                    android:layout_gravity="right"/>
+            </FrameLayout>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -228,15 +237,26 @@
                 android:textColor="#000000"
                 android:textSize="10dp"
                 android:fontFamily="@font/noto_sans"
+                android:layout_marginTop="18dp"
                 android:layout_marginLeft="28dp"/>
-            <ImageView
+            <FrameLayout
                 android:layout_width="154dp"
                 android:layout_height="154dp"
-                android:src="@drawable/product_img"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="25dp"
-                android:layout_gravity="center"
-                android:id="@+id/news2"/>
+                android:layout_marginTop="11dp"
+                android:layout_marginLeft="25dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/product_img"
+                    android:id="@+id/news2"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/heart_white"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="9dp"
+                    android:layout_gravity="right"/>
+            </FrameLayout>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -263,15 +283,27 @@
                 android:textColor="#000000"
                 android:textSize="10dp"
                 android:fontFamily="@font/noto_sans"
+                android:layout_marginTop="18dp"
                 android:layout_marginLeft="28dp"/>
-            <ImageView
+            <FrameLayout
                 android:layout_width="154dp"
                 android:layout_height="154dp"
-                android:src="@drawable/product_img"
                 android:layout_marginTop="20dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
-                android:id="@+id/news3"/>
+                android:layout_marginRight="25dp"
+                android:layout_gravity="right">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/product_img"
+                    android:id="@+id/news3"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/heart_white"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="9dp"
+                    android:layout_gravity="right"/>
+            </FrameLayout>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -298,15 +330,27 @@
                 android:textColor="#000000"
                 android:textSize="10dp"
                 android:fontFamily="@font/noto_sans"
-                android:layout_marginLeft="54dp"/>
-            <ImageView
+                android:layout_marginLeft="54dp"
+                android:layout_marginTop="18dp"/>
+            <FrameLayout
                 android:layout_width="154dp"
                 android:layout_height="154dp"
-                android:src="@drawable/product_img"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
-                android:id="@+id/news4"/>
+                android:layout_marginTop="11dp"
+                android:layout_marginRight="25dp"
+                android:layout_gravity="right">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/product_img"
+                    android:id="@+id/news4"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/heart_white"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="9dp"
+                    android:layout_gravity="right"/>
+            </FrameLayout>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -333,7 +377,8 @@
                 android:textColor="#000000"
                 android:textSize="10dp"
                 android:fontFamily="@font/noto_sans"
-                android:layout_marginLeft="54dp"/>
+                android:layout_marginLeft="54dp"
+                android:layout_marginTop="18dp"/>
         </GridLayout>
     </ScrollView>
 </LinearLayout>
