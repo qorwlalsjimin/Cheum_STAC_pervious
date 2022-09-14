@@ -103,14 +103,7 @@ public class HomeFragment extends Fragment {
                         button.setTextColor(getColor(favorite));
                     }
                     reference.child(path).setValue(favorite);
-                    button.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Boolean favorite = !getColorFavorite(button.getCurrentTextColor());
-                            button.setTextColor(getColor(favorite));
-                            reference.child(path).setValue(favorite);
-                        }
-                    });
+
                 }
             }
 
@@ -119,6 +112,18 @@ public class HomeFragment extends Fragment {
                 //에러 처리
             }
         });
+
+        for (Button button : buttonList){
+            String path = UserUtils.getHash() + "/store/" + button.getTag().toString();
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Boolean favorite = !getColorFavorite(button.getCurrentTextColor());
+                    reference.child(path).setValue(favorite);
+                }
+            });
+        }
+
         return view;
     }
 
