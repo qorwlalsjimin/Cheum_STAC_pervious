@@ -22,6 +22,8 @@ import net.daum.mf.map.api.MapView;
 
 import java.security.MessageDigest;
 
+import mirim.cheum_stac.util.UserUtils;
+
 public class MainActivity extends AppCompatActivity {
     private FragmentManager fragmentManager = getSupportFragmentManager();
     private HomeFragment homeFragment = new HomeFragment();
@@ -73,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
                 md = MessageDigest.getInstance("SHA");
                 md.update(signature.toByteArray());
                 String something = new String(Base64.encode(md.digest(), 0));
+
+                /** 유저 해시값에서 \n만 없애고 UserUtils의 hash변수에 넣어준다. **/
+                UserUtils.setHash(something.replaceAll("\n", ""));
                 Log.e("Hash key", something);
             }
         } catch (Exception e) {
