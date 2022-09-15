@@ -7,7 +7,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import net.daum.mf.map.api.MapView;
 
@@ -18,6 +22,10 @@ public class ChildMapFragment extends Fragment {
 
     LinearLayout linearInfo;
     ViewGroup mapViewContainer;
+
+    //추후 삭제
+    EditText editSearch;
+    ImageView imgSearch;
 
     public static ChildMapFragment newInstance() {
         return new ChildMapFragment();
@@ -37,6 +45,26 @@ public class ChildMapFragment extends Fragment {
         MapView mapView = new MapView(getActivity());
         mapViewContainer = (ViewGroup) v.findViewById(R.id.map_view);
         mapViewContainer.addView(mapView);
+
+        //추후 삭제
+        editSearch = v.findViewById(R.id.editTextFilter);
+        imgSearch = v.findViewById(R.id.img_search_icon);
+
+        editSearch.setText("검색어");
+        editSearch.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                Toast.makeText(getContext(), "ChildSearchFragment로 이동", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        imgSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editSearch.setText("");
+                imgSearch.setBackgroundResource(R.drawable.map_search_icon);
+            }
+        });
 
         linearInfo = v.findViewById(R.id.linear_store_info);
         linearInfo.setOnClickListener(new View.OnClickListener() {

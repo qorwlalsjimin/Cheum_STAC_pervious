@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--리스트뷰 목록에 뜰 layout-->
+    <!--검색어 입력 리스트뷰 목록에 뜰 layout-->
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"

@@ -100,6 +100,8 @@ public class ParentFragment extends Fragment implements View.OnClickListener {
         return v;
     }
 
+
+
     //자식 Fragment로 이동(즐겨찾기 리스트뷰)
     View.OnClickListener oneListener = new View.OnClickListener() {
         @Override
@@ -122,6 +124,8 @@ public class ParentFragment extends Fragment implements View.OnClickListener {
         }
     };
 
+
+
     @Override
     public void onClick(View view) {}
 
@@ -137,7 +141,7 @@ public class ParentFragment extends Fragment implements View.OnClickListener {
         if(fragmentListener != null) fragmentListener = null;
     }
 
-    private void setChildFragment(Fragment child) {
+    public void setChildFragment(Fragment child) {
         FragmentTransaction childFt = getChildFragmentManager().beginTransaction();
 
         if (!child.isAdded()) {
