@@ -17,7 +17,9 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/map_search_icon"/>
+            android:background="@android:color/transparent"
+            android:layout_margin="10dp"
+            android:src="@drawable/down"/>
     </FrameLayout>
 
     <LinearLayout
@@ -41,7 +43,8 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/map_search_icon"
+                android:src="@drawable/star"
+                android:background="@android:color/transparent"
                 android:layout_alignParentEnd="true"/>
         </LinearLayout>
 

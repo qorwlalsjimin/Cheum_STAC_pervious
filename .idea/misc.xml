@@ -7,7 +7,7 @@
         <entry key="..\:/Cheum_STAC/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
         <entry key="..\:/Cheum_STAC/app/src/main/res/layout/activity_store_info.xml" value="0.19746376811594202" />
         <entry key="..\:/Cheum_STAC/app/src/main/res/layout/fragment_child_map.xml" value="0.19746376811594202" />
-        <entry key="..\:/Cheum_STAC/app/src/main/res/layout/fragment_child_result.xml" value="0.1" />
+        <entry key="..\:/Cheum_STAC/app/src/main/res/layout/fragment_child_result.xml" value="0.264" />
         <entry key="..\:/Cheum_STAC/app/src/main/res/layout/fragment_child_search.xml" value="0.1" />
         <entry key="..\:/Cheum_STAC/app/src/main/res/layout/fragment_fill.xml" value="0.1" />
         <entry key="..\:/Cheum_STAC/app/src/main/res/layout/fragment_home.xml" value="0.25" />
@@ -34,5 +34,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.264" />
+      </ProjectState>
+    </option>
   </component>
 </project>
