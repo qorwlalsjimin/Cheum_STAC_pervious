@@ -56,13 +56,13 @@ public class MapFragment extends Fragment {
         editSearch.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                activity.onFragmentChange();
+                activity.onFragmentChange("Parent");
             }
         });
         editSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                activity.onFragmentChange();
+                activity.onFragmentChange("Parent");
                 Log.d("Fragment", "ParentFragment 실행");
             }
         });

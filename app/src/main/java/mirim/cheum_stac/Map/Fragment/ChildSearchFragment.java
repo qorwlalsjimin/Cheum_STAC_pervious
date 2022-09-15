@@ -1,5 +1,6 @@
 package mirim.cheum_stac.Map.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import mirim.cheum_stac.MainActivity;
 import mirim.cheum_stac.Map.ListView.ListViewAdapter;
 import mirim.cheum_stac.Map.ListView.ListViewItem;
 import mirim.cheum_stac.Map.StoreDatas;
@@ -23,6 +25,7 @@ public class ChildSearchFragment extends Fragment {
     EditText editSearch; //검색어 editText 타입
     ListView listData; //검색 결과 보이는 리스트뷰
     boolean isSearch = true;
+    int storeId;
 
     public static ChildSearchFragment newInstance() {
         return new ChildSearchFragment();
@@ -62,8 +65,8 @@ public class ChildSearchFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ListViewItem obj = (ListViewItem) parent.getAdapter().getItem(position);
-                Log.d("아이디: ", Integer.toString(obj.getId()));
-
+                storeId = obj.getId();
+                //화면 이동 코드 필요
             }
         });
 

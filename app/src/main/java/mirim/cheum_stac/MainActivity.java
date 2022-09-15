@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.appsearch.StorageInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
@@ -25,6 +26,7 @@ import java.security.MessageDigest;
 import mirim.cheum_stac.Map.Fragment.ChildSearchFragment;
 import mirim.cheum_stac.Map.Fragment.FragmentListener;
 import mirim.cheum_stac.Map.Fragment.ParentFragment;
+import mirim.cheum_stac.Map.Fragment.StoreInfoFragment;
 
 public class MainActivity extends AppCompatActivity implements FragmentListener {
     private FragmentManager fragmentManager = getSupportFragmentManager();
@@ -77,8 +79,13 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     }
 
     //parent 프래그먼트로 이동 : 프래그먼트간 이동에 사용
-    public void onFragmentChange(){
+    public void onFragmentChange(String nameFrag){
         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, ParentFragment.newInstance()).commit();
+    }
+
+    //리스트뷰 클릭시 Fragment 이동 시도(현재 X)
+    public void onInfoFragmentChange(){
+        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, StoreInfoFragment.newInstance()).commit();
     }
 
     //FragmentListener 추상메서드 구현
