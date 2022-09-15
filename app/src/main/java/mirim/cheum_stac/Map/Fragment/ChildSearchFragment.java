@@ -4,12 +4,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
 
+import mirim.cheum_stac.ChildMapFragment;
 import mirim.cheum_stac.MainActivity;
 import mirim.cheum_stac.Map.ListView.ListViewAdapter;
 import mirim.cheum_stac.Map.ListView.ListViewItem;
@@ -63,7 +65,7 @@ public class ChildSearchFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ListViewItem obj = (ListViewItem) parent.getAdapter().getItem(position);
                 storeId = obj.getId();
-                ((MainActivity)getActivity()).replaceFragment(ChildResultFragment.newInstance());
+                ((MainActivity)getActivity()).replaceFragment(ChildMapFragment.newInstance());
             }
         });
 

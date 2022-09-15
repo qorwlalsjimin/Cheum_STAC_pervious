@@ -5,11 +5,15 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
@@ -73,6 +77,22 @@ public class ParentFragment extends Fragment implements View.OnClickListener {
                     ChildSearchFragment childSearchFragment = new ChildSearchFragment();
                     childSearchFragment.isSearch(true);
                 }
+            }
+        });
+
+        //검색어 입력 후 완료 버튼 눌렀을때
+        editSearch.setOnEditorActionListener(new TextView.OnEditorActionListener()
+        {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event)
+            {
+                if(actionId == EditorInfo.IME_ACTION_DONE)
+                {
+                    imgSearch.setImageResource(R.drawable.x);
+                    //키보드 내리는 기능 추가하기
+                    return true;
+                }
+                return false;
             }
         });
         imgSearch.setOnClickListener(twoListener);
