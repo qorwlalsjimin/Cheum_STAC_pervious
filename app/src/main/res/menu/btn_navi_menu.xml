@@ -17,6 +17,7 @@
         android:id="@+id/tab_fill"
         android:enabled="true"
         app:showAsAction="always"
+        android:icon="@drawable/fill"
         android:title="채움"/>
     <item
         android:id="@+id/tab_myPage"

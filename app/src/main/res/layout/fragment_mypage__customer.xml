@@ -114,7 +114,7 @@
                     <ImageView
                         android:layout_width="278dp"
                         android:layout_height="175dp"
-                        android:src="@drawable/Inquirybox" />
+                        android:src="@drawable/inquirybox" />
                     <EditText
                         android:layout_width="278dp"
                         android:layout_height="match_parent"
