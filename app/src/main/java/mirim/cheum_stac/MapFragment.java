@@ -14,6 +14,8 @@ import android.widget.EditText;
 
 import net.daum.mf.map.api.MapView;
 
+import mirim.cheum_stac.Map.Fragment.ParentFragment;
+
 public class MapFragment extends Fragment {
     MainActivity activity;
 
@@ -56,14 +58,13 @@ public class MapFragment extends Fragment {
         editSearch.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                activity.onFragmentChange();
+                ((MainActivity)getActivity()).replaceFragment(ParentFragment.newInstance());
             }
         });
         editSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                activity.onFragmentChange();
-                Log.d("Fragment", "ParentFragment 실행");
+                ((MainActivity)getActivity()).replaceFragment(ParentFragment.newInstance());
             }
         });
         return v;
