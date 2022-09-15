@@ -10,13 +10,13 @@ import android.view.ViewGroup;
 
 import mirim.cheum_stac.R;
 
-public class StoreInfoFragment extends Fragment {
+public class ChildResultFragment extends Fragment {
 
 
-    public StoreInfoFragment() {}
+    public ChildResultFragment() {}
 
-    public static StoreInfoFragment newInstance() {
-        return new StoreInfoFragment();
+    public static ChildResultFragment newInstance() {
+        return new ChildResultFragment();
     }
 
 
@@ -29,6 +29,6 @@ public class StoreInfoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_store_info, container, false);
+        return inflater.inflate(R.layout.fragment_child_result, container, false);
     }
 }

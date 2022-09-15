@@ -2,10 +2,10 @@ package mirim.cheum_stac;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.app.appsearch.StorageInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
@@ -13,20 +13,14 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.ViewGroup;
 
-import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
-
-import net.daum.mf.map.api.MapView;
 
 import java.security.MessageDigest;
 
 import mirim.cheum_stac.Map.Fragment.ChildSearchFragment;
 import mirim.cheum_stac.Map.Fragment.FragmentListener;
 import mirim.cheum_stac.Map.Fragment.ParentFragment;
-import mirim.cheum_stac.Map.Fragment.StoreInfoFragment;
 
 public class MainActivity extends AppCompatActivity implements FragmentListener {
     private FragmentManager fragmentManager = getSupportFragmentManager();
@@ -39,12 +33,14 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     private ParentFragment parentFragment;
     private ChildSearchFragment childSearchFragment;
 
+    FragmentTransaction transaction;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.frameLayout,homeFragment).commit(); //초기화면 HomeFragment로 지정
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.btn_navi_menu);
@@ -78,14 +74,10 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
 
     }
 
-    //parent 프래그먼트로 이동 : 프래그먼트간 이동에 사용
-    public void onFragmentChange(String nameFrag){
-        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, ParentFragment.newInstance()).commit();
-    }
-
-    //리스트뷰 클릭시 Fragment 이동 시도(현재 X)
-    public void onInfoFragmentChange(){
-        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, StoreInfoFragment.newInstance()).commit();
+    public void replaceFragment(Fragment fragment){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.frameLayout, fragment).commit();
     }
 
     //FragmentListener 추상메서드 구현

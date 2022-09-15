@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Map.Fragment.StoreInfoFragment">
+    tools:context=".Map.Fragment.ChildResultFragment">
 
     <FrameLayout
         android:layout_width="match_parent"
