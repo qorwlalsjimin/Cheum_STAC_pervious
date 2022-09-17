@@ -57,15 +57,10 @@ public class ChildResultFragment extends Fragment {
 
         //가게 정보 가져와서 text 바꾸기
         StoreDatas storeDatas = new StoreDatas();
-//        Log.d("가게 정보를 추적하자 (`.')", "가져오는 데이터! storeName: "+storeDatas.storeText[3][1]);
-//        storeName.setText(storeDatas.storeText[3][1]);
         for(int i = 0; i< storeDatas.dataCnt; i++){
             if(storeDatas.storeText[i][0].equals(Integer.toString(storeId))){
                 storeName.setText(storeDatas.storeText[i][1]);
                 storeLoct.setText(storeDatas.storeText[i][2]);
-//                storeOper.setText(storeDatas.storeText[i][2]);
-//                storePage.setText(storeDatas.storeText[i][2]);
-//                storeDial.setText(storeDatas.storeText[i][2]);
             }
         }
 
