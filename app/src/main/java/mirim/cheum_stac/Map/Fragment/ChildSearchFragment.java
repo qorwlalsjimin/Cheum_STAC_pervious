@@ -22,7 +22,7 @@ public class ChildSearchFragment extends Fragment {
     EditText editSearch; //검색어 editText 타입
     ListView listData; //검색 결과 보이는 리스트뷰
     boolean isSearch = true;
-    int storeId;
+    public int storeId;
 
     public static ChildSearchFragment newInstance() {
         return new ChildSearchFragment();

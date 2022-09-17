@@ -6,35 +6,35 @@
     android:orientation="vertical"
     tools:context=".Map.Fragment.ChildResultFragment">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <!--지도-->
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:id="@+id/rel_map"
-            >
-            <RelativeLayout
-                android:id="@+id/map_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </RelativeLayout>
-        <!--지도 대용-->
-<!--        <RelativeLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="100dp"-->
-<!--            android:background="#8BC34A"/>-->
+<!--    <FrameLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+<!--        &lt;!&ndash;지도&ndash;&gt;-->
+<!--&lt;!&ndash;        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:orientation="vertical"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="100dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/rel_map"&ndash;&gt;-->
+<!--&lt;!&ndash;            >&ndash;&gt;-->
+<!--&lt;!&ndash;            <RelativeLayout&ndash;&gt;-->
+<!--&lt;!&ndash;                android:id="@+id/map_view"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="match_parent" />&ndash;&gt;-->
+<!--&lt;!&ndash;        </RelativeLayout>&ndash;&gt;-->
+<!--        &lt;!&ndash;지도 대용&ndash;&gt;-->
+<!--&lt;!&ndash;        <RelativeLayout&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="100dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:background="#8BC34A"/>&ndash;&gt;-->
 
-        <ImageButton
-            android:id="@+id/imgbtn_down"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:layout_margin="10dp"
-            android:src="@drawable/down"/>
-    </FrameLayout>
+<!--        <ImageButton-->
+<!--            android:id="@+id/imgbtn_down"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:src="@drawable/down"/>-->
+<!--    </FrameLayout>-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -61,9 +61,8 @@
                 android:id="@+id/imgbtn_star"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/star"
                 android:layout_marginBottom="10dp"
-                android:background="@android:color/transparent"
+                android:background="@drawable/star_empty"
                 android:layout_alignParentEnd="true"/>
         </LinearLayout>
 

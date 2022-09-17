@@ -21,6 +21,7 @@ import java.security.MessageDigest;
 import mirim.cheum_stac.Map.Fragment.ChildSearchFragment;
 import mirim.cheum_stac.Map.Fragment.FragmentListener;
 import mirim.cheum_stac.Map.Fragment.ParentFragment;
+import mirim.cheum_stac.util.UserUtils;
 
 public class MainActivity extends AppCompatActivity implements FragmentListener {
     private FragmentManager fragmentManager = getSupportFragmentManager();
@@ -96,6 +97,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
                 md.update(signature.toByteArray());
                 String something = new String(Base64.encode(md.digest(), 0));
                 Log.e("Hash key", something);
+                UserUtils.setHash(something);
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block

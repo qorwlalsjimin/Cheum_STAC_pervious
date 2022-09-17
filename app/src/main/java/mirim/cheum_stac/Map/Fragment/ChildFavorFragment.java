@@ -35,9 +35,9 @@ public class ChildFavorFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_child_favor, container, false);
 
+        //리스트뷰
         ListViewAdapter adapter;
         adapter = new ListViewAdapter() ;
-
         listData = (ListView) v.findViewById(R.id.list_favorite);
         listData.setAdapter(adapter);
 
@@ -46,6 +46,7 @@ public class ChildFavorFragment extends Fragment {
         for(int i = 0; i<storeDatas.dataCnt; i++)
             adapter.addItem(storeDatas.storeText[i][1], storeDatas.storeText[i][2], i);
 
+        //즐겨찾기 가게 클릭시
         listData.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
