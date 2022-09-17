@@ -1,6 +1,8 @@
 package com.cheum_stac.Map.Fragment;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,8 +10,10 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.cheum_stac.FragmentListener;
 import com.cheum_stac.MainActivity;
 import com.cheum_stac.Map.ListView.ListViewAdapter;
 import com.cheum_stac.Map.ListView.ListViewItem;
@@ -18,11 +22,12 @@ import com.cheum_stac.R;
 
 public class ChildSearchFragment extends Fragment {
 
+    FragmentListener fragmentListener;
     static String strSearch = "초기값"; //검색어 string 타입
     EditText editSearch; //검색어 editText 타입
     ListView listData; //검색 결과 보이는 리스트뷰
     boolean isSearch = true;
-    public int storeId;
+    int storeId;
 
     public static ChildSearchFragment newInstance() {
         return new ChildSearchFragment();
@@ -32,7 +37,6 @@ public class ChildSearchFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_child_search, container, false);
@@ -63,6 +67,9 @@ public class ChildSearchFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ListViewItem obj = (ListViewItem) parent.getAdapter().getItem(position);
                 storeId = obj.getId();
+                Log.d("값 옮기기를 추적하자 -_-", "서치프래그먼트 storeId: "+storeId);
+
+                fragmentListener.onCommand(1, Integer.toString(storeId));
                 ((MainActivity)getActivity()).replaceFragment(ChildMapFragment.newInstance());
             }
         });
@@ -80,4 +87,16 @@ public class ChildSearchFragment extends Fragment {
         strSearch = message;
     }
 
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+
+        if(context instanceof FragmentListener) fragmentListener = (FragmentListener) context;
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        if(fragmentListener != null) fragmentListener = null;
+    }
 }

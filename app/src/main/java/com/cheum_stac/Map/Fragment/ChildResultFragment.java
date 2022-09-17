@@ -35,7 +35,7 @@ public class ChildResultFragment extends Fragment {
     ImageButton imgbtnDown;
     ImageButton imgbtnStar;
     ViewGroup mapViewContainer;
-    static int storeId;
+    static int storeId=7;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
