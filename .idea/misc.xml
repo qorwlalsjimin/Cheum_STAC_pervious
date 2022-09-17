@@ -4,7 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/CHEUM/Cheum_STAC_pervious/app/src/main/res/layout/fragment_child_map.xml" value="0.19746376811594202" />
-        <entry key="..\:/CHEUM/Cheum_STAC_pervious/app/src/main/res/layout/fragment_child_result.xml" value="0.264" />
+        <entry key="..\:/CHEUM/Cheum_STAC_pervious/app/src/main/res/layout/fragment_child_result.xml" value="0.1" />
         <entry key="..\:/Cheum_STAC/app/src/main/res/layout/activity_main.xml" value="0.34739583333333335" />
         <entry key="..\:/Cheum_STAC/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
         <entry key="..\:/Cheum_STAC/app/src/main/res/layout/activity_store_info.xml" value="0.19746376811594202" />
@@ -42,7 +42,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.19746376811594202" />
+        <option name="scale" value="0.264" />
       </ProjectState>
     </option>
   </component>

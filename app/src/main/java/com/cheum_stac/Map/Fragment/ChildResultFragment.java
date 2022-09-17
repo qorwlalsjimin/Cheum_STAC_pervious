@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.cheum_stac.MainActivity;
 import com.cheum_stac.Map.StoreDatas;
 import com.cheum_stac.util.FirebaseUtils;
 import com.cheum_stac.util.UserUtils;
@@ -19,6 +20,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
+
+import net.daum.mf.map.api.MapView;
 
 public class ChildResultFragment extends Fragment {
 
@@ -115,20 +118,20 @@ public class ChildResultFragment extends Fragment {
         });
         
         //지도 화면에 보이게 함
-//        MapView mapView = new MapView(getActivity());
-//        mapViewContainer = (ViewGroup) v.findViewById(R.id.map_view);
-//        mapViewContainer.addView(mapView);
+        MapView mapView = new MapView(getActivity());
+        mapViewContainer = (ViewGroup) v.findViewById(R.id.map_view);
+        mapViewContainer.addView(mapView);
 
         //상세정보 내리는 이미지 버튼
-//        imgbtnDown = v.findViewById(R.id.imgbtn_down);
-//        imgbtnDown.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //Fragment창 닫는 코드로 추후 수정(FragmentManager)
-//                ((MainActivity)getActivity()).replaceFragment(ChildMapFragment.newInstance());
-//                mapViewContainer.removeAllViews();
-//            }
-//        });
+        imgbtnDown = v.findViewById(R.id.imgbtn_down);
+        imgbtnDown.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Fragment창 닫는 코드로 추후 수정(FragmentManager)
+                ((MainActivity)getActivity()).replaceFragment(ChildMapFragment.newInstance());
+                mapViewContainer.removeAllViews();
+            }
+        });
 
 
         Log.d("storeId를 추적합니다. 쭈고 -_-", "reference에 user 연동 storeId: "+storeId);
