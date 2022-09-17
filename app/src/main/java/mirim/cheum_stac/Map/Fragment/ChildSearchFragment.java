@@ -4,14 +4,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
 
-import mirim.cheum_stac.ChildMapFragment;
 import mirim.cheum_stac.MainActivity;
 import mirim.cheum_stac.Map.ListView.ListViewAdapter;
 import mirim.cheum_stac.Map.ListView.ListViewItem;
@@ -24,7 +22,7 @@ public class ChildSearchFragment extends Fragment {
     EditText editSearch; //검색어 editText 타입
     ListView listData; //검색 결과 보이는 리스트뷰
     boolean isSearch = true;
-    int storeId;
+    public int storeId;
 
     public static ChildSearchFragment newInstance() {
         return new ChildSearchFragment();

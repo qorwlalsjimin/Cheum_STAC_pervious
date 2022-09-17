@@ -18,9 +18,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.security.MessageDigest;
 
+import mirim.cheum_stac.Map.Fragment.ChildResultFragment;
 import mirim.cheum_stac.Map.Fragment.ChildSearchFragment;
-import mirim.cheum_stac.Map.Fragment.FragmentListener;
 import mirim.cheum_stac.Map.Fragment.ParentFragment;
+import mirim.cheum_stac.util.UserUtils;
 
 public class MainActivity extends AppCompatActivity implements FragmentListener {
     private FragmentManager fragmentManager = getSupportFragmentManager();
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     //지도 검색 Fragment들
     private ParentFragment parentFragment;
     private ChildSearchFragment childSearchFragment;
+    private ChildResultFragment childResultFragment;
 
     FragmentTransaction transaction;
 
@@ -69,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         //지도 검색 Fragment들 정의
         parentFragment = new ParentFragment();
         childSearchFragment = new ChildSearchFragment();
+        childResultFragment = new ChildResultFragment();
 
         gethash(); //키해시 값 구하는 메서드
 
@@ -82,8 +85,16 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
 
     //FragmentListener 추상메서드 구현
     @Override
-    public void onCommand(int index, String message) {
-        if(index == 0) childSearchFragment.displayMessage(message);
+    public void onCommand(int index, String data) {
+        switch (index){
+            case 0: //ParentFragment =>
+                childSearchFragment.displayMessage(data);
+                break;
+            case 1: //ChildFavorFragment, ChildSearchFragment =>
+                childResultFragment.displayMessage(data);
+                Log.d("값 옮기기를 추적하자 -_-", "2 Favor에서 받은 값으로 displayMessage를 호출하셧나요? data: "+data);
+                break;
+        }
     }
 
     //카카오맵 api를 사용하기 위한 키해시 값 구하는 메서드
@@ -96,6 +107,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
                 md.update(signature.toByteArray());
                 String something = new String(Base64.encode(md.digest(), 0));
                 Log.e("Hash key", something);
+                UserUtils.setHash(something.replaceAll("\n",""));
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block

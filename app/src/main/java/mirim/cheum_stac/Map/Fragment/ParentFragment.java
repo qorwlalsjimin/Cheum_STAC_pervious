@@ -13,13 +13,13 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import mirim.cheum_stac.FragmentListener;
 import mirim.cheum_stac.R;
 
 public class ParentFragment extends Fragment implements View.OnClickListener {
@@ -100,6 +100,8 @@ public class ParentFragment extends Fragment implements View.OnClickListener {
         return v;
     }
 
+
+
     //자식 Fragment로 이동(즐겨찾기 리스트뷰)
     View.OnClickListener oneListener = new View.OnClickListener() {
         @Override
@@ -122,6 +124,8 @@ public class ParentFragment extends Fragment implements View.OnClickListener {
         }
     };
 
+
+
     @Override
     public void onClick(View view) {}
 
@@ -137,7 +141,7 @@ public class ParentFragment extends Fragment implements View.OnClickListener {
         if(fragmentListener != null) fragmentListener = null;
     }
 
-    private void setChildFragment(Fragment child) {
+    public void setChildFragment(Fragment child) {
         FragmentTransaction childFt = getChildFragmentManager().beginTransaction();
 
         if (!child.isAdded()) {
