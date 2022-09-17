@@ -46,6 +46,7 @@ public class ChildResultFragment extends Fragment {
     ImageButton imgbtnDown;
     ImageButton imgbtnStar;
     ViewGroup mapViewContainer;
+    int storeId;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -53,7 +54,8 @@ public class ChildResultFragment extends Fragment {
         View v =  inflater.inflate(R.layout.fragment_child_result, container, false);
 
         imgbtnStar = v.findViewById(R.id.imgbtn_star);
-        int storeId =  new ChildSearchFragment().storeId;
+        //ChildFavor, ChildSearch 둘 다 유입되기에 이 부분 처리 필요
+        Log.d("파이어베이스를 추적하자 -_-", "가게 아이디"+Integer.toString(storeId));
 
         //파이어베이스 실시간 DB 연동
         Log.d("파이어베이스를 추적하자 -_-", "데이터베이스레퍼런스 연결 직전!");
@@ -134,5 +136,10 @@ public class ChildResultFragment extends Fragment {
         super.onPause();
         //카카오맵 지도 2~3개 이상 열리지 않게 조치
         if(mapViewContainer != null) mapViewContainer.removeAllViews();
+    }
+
+    //ParentFragment에서 값 받아오기
+    public void displayMessage(String data){
+        storeId = Integer.parseInt(data);
     }
 }

@@ -1,18 +1,18 @@
 package mirim.cheum_stac.Map.Fragment;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import mirim.cheum_stac.FragmentListener;
 import mirim.cheum_stac.MainActivity;
 import mirim.cheum_stac.Map.ListView.ListViewAdapter;
 import mirim.cheum_stac.Map.ListView.ListViewItem;
@@ -25,7 +25,8 @@ public class ChildFavorFragment extends Fragment {
     }
 
     ListView listData; //즐겨찾기 보이는 리스트뷰
-    int storeId;
+    int storeId=7; //ChildResultFragment로 값이 안 넘어가서 넣은 임의의 초기값
+    FragmentListener fragmentListener;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,11 +54,27 @@ public class ChildFavorFragment extends Fragment {
                 ListViewItem obj = (ListViewItem) parent.getAdapter().getItem(position);
                 storeId = obj.getId();
 
+                fragmentListener.onCommand(1, Integer.toString(storeId));
+                Log.d("값 옮기기를 추적하자 -_-", "1 onCommand로 값을 보냇어요! storeId: "+storeId);
+
                 ((MainActivity)getActivity()).replaceFragment(ChildMapFragment.newInstance());
             }
         });
 
 
         return v;
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+
+        if(context instanceof FragmentListener) fragmentListener = (FragmentListener) context;
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        if(fragmentListener != null) fragmentListener = null;
     }
 }
