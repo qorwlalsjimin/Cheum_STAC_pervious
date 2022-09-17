@@ -29,7 +29,6 @@ import mirim.cheum_stac.util.UserUtils;
 
 public class ChildResultFragment extends Fragment {
 
-
     public ChildResultFragment() {}
 
     public static ChildResultFragment newInstance() {
@@ -46,15 +45,15 @@ public class ChildResultFragment extends Fragment {
     ImageButton imgbtnDown;
     ImageButton imgbtnStar;
     ViewGroup mapViewContainer;
-    int storeId;
+    static int storeId;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v =  inflater.inflate(R.layout.fragment_child_result, container, false);
+        Log.d("storeId를 추적합니다. 쭈고 -_-", "onCreateView 실행되자마자 storeId: "+storeId);
 
         imgbtnStar = v.findViewById(R.id.imgbtn_star);
-        //ChildFavor, ChildSearch 둘 다 유입되기에 이 부분 처리 필요
         Log.d("파이어베이스를 추적하자 -_-", "가게 아이디"+Integer.toString(storeId));
 
         //파이어베이스 실시간 DB 연동
@@ -66,6 +65,8 @@ public class ChildResultFragment extends Fragment {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {//dataSnapshot : user
+
+                Log.d("storeId를 추적합니다. 쭈고 -_-", "reference에 user 연동 storeId: "+storeId);
                 Log.d("파이어베이스를 추적하자 -_-", "onDataChange 실행");
                 String path = UserUtils.getHash() + "/favorite/" + Integer.toString(storeId);
                 Boolean favorite = false;
@@ -75,6 +76,7 @@ public class ChildResultFragment extends Fragment {
                     Log.d("파이어베이스를 추적하자 -_-", "favorite값을 디비에서 가져왓어요! favorite: "+favorite);
                     imgbtnStar.setBackgroundResource(getBGR(favorite));
                     Log.d("파이어베이스를 추적하자 -_-", "favorite값에 따라 달라지는 이미지 파일 getBGR(favorite): "+getBGR(favorite)+" favorite: "+favorite);
+                    Log.d("storeId를 추적합니다. 쭈고 -_-", "reference에 user 연동 storeId: "+storeId);
                 }
                 reference.child(path).setValue(favorite);
 
@@ -120,6 +122,9 @@ public class ChildResultFragment extends Fragment {
 //            }
 //        });
 
+
+        Log.d("storeId를 추적합니다. 쭈고 -_-", "reference에 user 연동 storeId: "+storeId);
+
         return v;
     }
 
@@ -138,8 +143,10 @@ public class ChildResultFragment extends Fragment {
         if(mapViewContainer != null) mapViewContainer.removeAllViews();
     }
 
-    //ParentFragment에서 값 받아오기
+    //즐겨찾기 화면, 검색된 화면에서 값 받아오기
     public void displayMessage(String data){
         storeId = Integer.parseInt(data);
+        Log.d("값 옮기기를 추적하자 -_-", "가게 아이디를 정상적으로 받았나요? storeId: "+storeId);
     }
+
 }

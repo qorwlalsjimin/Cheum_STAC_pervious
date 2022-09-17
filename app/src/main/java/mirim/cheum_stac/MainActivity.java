@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
                 break;
             case 1: //ChildFavorFragment, ChildSearchFragment =>
                 childResultFragment.displayMessage(data);
-                Log.d("값 옮기기를 추적하자 -_-", "2 Favor에서 받은 값으로 displayMessage를 호출하셧나요? data: "+data);
+                Log.d("값 옮기기를 추적하자 -_-", "Favor에서 받은 값으로 displayMessage를 호출하셧나요? data: "+data);
                 break;
         }
     }

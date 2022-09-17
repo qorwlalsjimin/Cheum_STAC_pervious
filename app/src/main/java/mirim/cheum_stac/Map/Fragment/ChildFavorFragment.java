@@ -55,7 +55,7 @@ public class ChildFavorFragment extends Fragment {
                 storeId = obj.getId();
 
                 fragmentListener.onCommand(1, Integer.toString(storeId));
-                Log.d("값 옮기기를 추적하자 -_-", "1 onCommand로 값을 보냇어요! storeId: "+storeId);
+                Log.d("값 옮기기를 추적하자 -_-", "onCommand로 값을 보냇어요! storeId: "+storeId);
 
                 ((MainActivity)getActivity()).replaceFragment(ChildMapFragment.newInstance());
             }
