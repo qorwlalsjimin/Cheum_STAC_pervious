@@ -97,16 +97,21 @@
         android:orientation="vertical"
         android:background="@color/white"
         android:layout_alignBottom="@id/frame_map"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="8dp"
         android:paddingVertical="8dp">
         <TextView
             android:id="@+id/text_store_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="15dp"
             android:text="가게 이름"/>
         <TextView
             android:id="@+id/text_store_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="11dp"
+            android:textColor="#66000000"
             android:text="가게 위치"/>
     </LinearLayout>
 
