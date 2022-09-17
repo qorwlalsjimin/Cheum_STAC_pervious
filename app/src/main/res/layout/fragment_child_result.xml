@@ -98,11 +98,12 @@
                 android:layout_marginTop="10dp"
                 android:text="위치"/>
             <TextView
+                android:id="@+id/text_store_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="13dp"
                 android:textColor="@color/black"
-                android:text="서울 중구 한강대로"/>
+                android:text="예시) 서울 중구 한강대로"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -112,11 +113,12 @@
                 android:layout_marginTop="10dp"
                 android:text="운영시간 안내"/>
             <TextView
+                android:id="@+id/text_store_operation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="13dp"
                 android:textColor="@color/black"
-                android:text="화~일 12:00 ~ 21:00"/>
+                android:text="예시) 화~일 12:00 ~ 21:00"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -126,11 +128,12 @@
                 android:layout_marginTop="10dp"
                 android:text="홈 페이지"/>
             <TextView
+                android:id="@+id/text_store_page"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="13dp"
                 android:textColor="@color/black"
-                android:text="www.naver.com"/>
+                android:text="예시) www.naver.com"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -140,11 +143,12 @@
                 android:layout_marginTop="10dp"
                 android:text="연락처"/>
             <TextView
+                android:id="@+id/text_store_dial"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="13dp"
                 android:textColor="@color/black"
-                android:text="070-7777-1925 대표번호"/>
+                android:text="예시) 070-7777-1925 대표번호"/>
         </LinearLayout>
 
         <!--밑줄과 사진-->

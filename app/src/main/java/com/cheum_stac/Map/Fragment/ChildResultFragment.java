@@ -5,10 +5,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.cheum_stac.Map.StoreDatas;
 import com.cheum_stac.util.FirebaseUtils;
 import com.cheum_stac.util.UserUtils;
 import com.cheum_stac.R;
@@ -35,6 +38,7 @@ public class ChildResultFragment extends Fragment {
     ImageButton imgbtnDown;
     ImageButton imgbtnStar;
     ViewGroup mapViewContainer;
+    TextView storeName, storeLoct, storeOper, storePage, storeDial;
     static int storeId=7;
 
     @Override
@@ -44,7 +48,26 @@ public class ChildResultFragment extends Fragment {
         Log.d("storeId를 추적합니다. 쭈고 -_-", "onCreateView 실행되자마자 storeId: "+storeId);
 
         imgbtnStar = v.findViewById(R.id.imgbtn_star);
+        storeName = v.findViewById(R.id.text_store_name);
+        storeLoct = v.findViewById(R.id.text_store_location);
+        storeOper = v.findViewById(R.id.text_store_operation);
+        storePage = v.findViewById(R.id.text_store_page);
+        storeDial = v.findViewById(R.id.text_store_dial);
         Log.d("파이어베이스를 추적하자 -_-", "가게 아이디"+Integer.toString(storeId));
+
+        //가게 정보 가져와서 text 바꾸기
+        StoreDatas storeDatas = new StoreDatas();
+//        Log.d("가게 정보를 추적하자 (`.')", "가져오는 데이터! storeName: "+storeDatas.storeText[3][1]);
+//        storeName.setText(storeDatas.storeText[3][1]);
+        for(int i = 0; i< storeDatas.dataCnt; i++){
+            if(storeDatas.storeText[i][0].equals(Integer.toString(storeId))){
+                storeName.setText(storeDatas.storeText[i][1]);
+                storeLoct.setText(storeDatas.storeText[i][2]);
+//                storeOper.setText(storeDatas.storeText[i][2]);
+//                storePage.setText(storeDatas.storeText[i][2]);
+//                storeDial.setText(storeDatas.storeText[i][2]);
+            }
+        }
 
         //파이어베이스 실시간 DB 연동
         Log.d("파이어베이스를 추적하자 -_-", "데이터베이스레퍼런스 연결 직전!");
