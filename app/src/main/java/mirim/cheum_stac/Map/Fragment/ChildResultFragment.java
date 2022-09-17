@@ -95,7 +95,7 @@ public class ChildResultFragment extends Fragment {
         imgbtnStar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("파이어베이스를 추적하자 -_-", "이미지 버튼 온클릭");
+                Log.d("파이어베이스를 추적하자 -_-", "이미지 버튼 온클릭******************************************");
                 Boolean favorite = !getBGRFavorite(imgbtnStar.getTag().toString());
                 reference.child(path).setValue(favorite);
                 Log.d("파이어베이스를 추적하자 -_-", "DB에 true/flase값 set 2 favorite: "+favorite);

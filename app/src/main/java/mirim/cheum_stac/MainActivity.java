@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
                 md.update(signature.toByteArray());
                 String something = new String(Base64.encode(md.digest(), 0));
                 Log.e("Hash key", something);
-                UserUtils.setHash(something);
+                UserUtils.setHash(something.replaceAll("\n",""));
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
