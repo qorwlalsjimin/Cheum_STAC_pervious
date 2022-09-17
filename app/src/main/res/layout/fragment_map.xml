@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal"
-    tools:context=".MainActivity">
+    tools:context="com.cheum_stac.MainActivity">
 
     <!--탭바에서 눌렀을때 나오는 Fragment-->
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"

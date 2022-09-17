@@ -7,7 +7,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "mirim.cheum_stac"
+        applicationId "com.cheum_stac"
         minSdk 21
         targetSdk 32
         versionCode 2

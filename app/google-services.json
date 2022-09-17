@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:115382196779:android:a295bbba768c7a9229a86e",
         "android_client_info": {
-          "package_name": "kr.hs.s2104.listviewdb"
+          "package_name": "com.cheum_stac"
         }
       },
       "oauth_client": [
@@ -39,7 +39,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:115382196779:android:853ef7da09d4253529a86e",
         "android_client_info": {
-          "package_name": "mirim.cheum_stac"
+          "package_name": "com.cheum_stac"
         }
       },
       "oauth_client": [
@@ -47,7 +47,7 @@
           "client_id": "115382196779-topdq5cghmp3djus678hagbm14ofe56r.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "mirim.cheum_stac",
+            "package_name": "com.cheum_stac",
             "certificate_hash": "1540fb5c5bffc8955ba3ec98513791623230d0b5"
           }
         },
